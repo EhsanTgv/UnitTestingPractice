@@ -59,8 +59,8 @@ class RegistrationUtilsTest {
     fun lessThan2DigitsPasswordReturnsFalse() {
         val result = RegistrationUtils.validateRegistrationInput(
             "John",
-            "123",
-            "123"
+            "abcdef5",
+            "abcdef5"
         )
         assertThat(result).isFalse()
     }
