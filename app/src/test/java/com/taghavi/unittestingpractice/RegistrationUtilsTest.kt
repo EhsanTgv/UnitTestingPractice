@@ -6,7 +6,7 @@ import org.junit.Test
 class RegistrationUtilsTest {
 
     @Test
-    fun emptyUsernameReturnsFalse() {
+    fun `empty username returns false`() {
         val result = RegistrationUtils.validateRegistrationInput(
             "",
             "123",
@@ -16,7 +16,7 @@ class RegistrationUtilsTest {
     }
 
     @Test
-    fun validUsernameAndCorrectRepeatedPasswordReturnsTrue() {
+    fun `valid username and correct repeated password returns true`() {
         val result = RegistrationUtils.validateRegistrationInput(
             "John",
             "123",
@@ -26,7 +26,7 @@ class RegistrationUtilsTest {
     }
 
     @Test
-    fun usernameAlreadyExistsReturnsFalse() {
+    fun `username already exists returns false`() {
         val result = RegistrationUtils.validateRegistrationInput(
             "Carl",
             "123",
@@ -36,7 +36,7 @@ class RegistrationUtilsTest {
     }
 
     @Test
-    fun incorrectlyConfirmedPasswordReturnsFalse() {
+    fun `incorrectly confirmed password returns false`() {
         val result = RegistrationUtils.validateRegistrationInput(
             "John",
             "123456",
@@ -46,7 +46,7 @@ class RegistrationUtilsTest {
     }
 
     @Test
-    fun emptyPasswordReturnsFalse() {
+    fun `empty password returns false`() {
         val result = RegistrationUtils.validateRegistrationInput(
             "John",
             "",
@@ -56,7 +56,7 @@ class RegistrationUtilsTest {
     }
 
     @Test
-    fun lessThan2DigitsPasswordReturnsFalse() {
+    fun `less than 2 digits password returns false`() {
         val result = RegistrationUtils.validateRegistrationInput(
             "John",
             "abcdef5",
